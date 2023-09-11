@@ -5,7 +5,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <Counter />
+        <Counter initialVal={0} increment={1} timeout={1000} />
       </div>
     );
   }
