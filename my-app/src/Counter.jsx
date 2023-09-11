@@ -15,7 +15,6 @@ export class Counter extends React.Component {
     }, this.props.timeout);
   }
   render(){
-    console.log(this.props.intialVal, this.props.increment, this.props.timeout)
     return <h1>Count: {this.state.count}</h1>
   }
 }
