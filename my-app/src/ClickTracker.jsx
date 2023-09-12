@@ -1,15 +1,15 @@
 import React from "react";
 
 export class ClickTracker extends React.Component {
-    state = {
-        buttonClicked : "",
-    }
+  state = {
+    buttonClicked: "",
+  };
   handleTrackingButton = (event) => {
-    this.setState((state)=>{
-        return{
-            buttonClicked : (state.buttonClicked = event.target.name),
-        }
-    })
+    this.setState((state) => {
+      return {
+        buttonClicked: (state.buttonClicked = event.target.name),
+      };
+    });
   };
 
   render() {
@@ -17,13 +17,13 @@ export class ClickTracker extends React.Component {
       <div>
         <h1> Button Clicked : {this.state.buttonClicked}</h1>
         <button name="button1" onClick={this.handleTrackingButton}>
-          {"Click me "}
+          Button 1
         </button>
         <button name="button2" onClick={this.handleTrackingButton}>
-          {" CLick me"}
+          Button 2
         </button>
         <button name="button3" onClick={this.handleTrackingButton}>
-          {" Click me"}
+          Button 3
         </button>
       </div>
     );
