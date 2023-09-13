@@ -11,6 +11,12 @@ export class Login extends React.Component {
       [event.target.name]: event.target.value,
     });
   };
+  handleResetForm = () => {
+    this.setState({
+      username: "",
+      password: "",
+    });
+  };
 
   render() {
     return (
@@ -35,7 +41,13 @@ export class Login extends React.Component {
               : false
           }
           onClick={this.props.onLogin}
-        > Click me</button>
+        >
+          {" "}
+          Click me
+        </button>
+        <button type="button" onClick={this.handleResetForm}>
+          Reset Every Thing
+        </button>
       </div>
     );
   }
