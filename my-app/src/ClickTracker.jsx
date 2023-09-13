@@ -5,18 +5,16 @@ export class ClickTracker extends React.Component {
     buttonClicked: "",
   };
   handleTrackingButton = (event) => {
-    this.setState((state) => {
-      return {
-        buttonClicked: (state.buttonClicked = event.target.name),
-      };
-    });
+    this.setState({
+      buttonClicked : event.target.name
+    })
   };
 
   render() {
     return (
       <div>
         <h1> Button Clicked : {this.state.buttonClicked}</h1>
-        <button name="button1" onClick={this.handleTrackingButton}>
+        <button  name="button1" onClick={this.handleTrackingButton}>
           Button 1
         </button>
         <button name="button2" onClick={this.handleTrackingButton}>
