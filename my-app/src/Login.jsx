@@ -30,7 +30,7 @@ export class Login extends React.Component {
         <button
           type="button"
           disabled={
-            this.state.username === "" && this.state.password === ""
+            this.state.username === "" || this.state.password === ""
               ? true
               : false
           }
