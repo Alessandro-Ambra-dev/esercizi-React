@@ -28,6 +28,10 @@ export class UncontrolledLogin extends React.Component {
       disabled: !username || !password,
     });
   };
+  componentDidMount(){
+    const username = this.username.current
+     username.focus()
+ }
 
   render() {
     return (
