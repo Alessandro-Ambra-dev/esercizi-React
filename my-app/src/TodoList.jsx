@@ -26,6 +26,12 @@ export class TodoList extends React.Component {
       newState: "",
     });
   };
+  handleRefreshState = () =>{
+    this.setState({
+        todos:["Do React", "Present the project", "Do the human development"],
+        newState: ''
+    })
+  }
   render() {
     let todos = this.state.todos.map((todo, index) => (
       <li key={index}>{todo}</li>
@@ -43,6 +49,7 @@ export class TodoList extends React.Component {
           {" "}
           Create New Todo
         </button>
+        <button type="button" onClick={this.handleRefreshState}>Refresh The List</button>
       </div>
     );
   }
