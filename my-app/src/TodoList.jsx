@@ -23,6 +23,7 @@ export class TodoList extends React.Component {
 
     this.setState({
       todos: this.state.todos,
+      newState: "",
     });
   };
   render() {
