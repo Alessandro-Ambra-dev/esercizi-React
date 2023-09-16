@@ -28,14 +28,14 @@ export class TodoList extends React.Component {
   };
   handleRefreshState = () =>{
     this.setState({
-        todos:["Do React", "Present the project", "Do the human development"],
+        todos:[],
         newState: ''
     })
   }
 
   handleRemoveItem =(event)=>{
 
-    const index = event.target.closest("li").index;
+    const index = this.state.todos.indexOf("h3")
 
     const slice = this.state.todos.slice();
 
@@ -48,12 +48,15 @@ export class TodoList extends React.Component {
     
   }
   render() {
-    let todos = this.state.todos.map((todo, index) => (
-      <li  key={index}>{todo}<button onClick={this.handleRemoveItem}>Remove from List</button></li>
-    ));
+
+    
+    // let todos = this.state.todos.map((todo, index) => (
+    //   <li  key={index}>{todo}<button onClick={this.handleRemoveItem}>Remove from List</button></li>
+    // ));
     return (
       <div>
-        <ul>{todos}</ul>
+        {/* <ul>{todos}</ul> */}
+        <div>{this.props.render(this.state.todos,this.handleRemoveItem)}</div>
         <input
           type="text"
           name="newState"
