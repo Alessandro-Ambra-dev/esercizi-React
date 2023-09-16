@@ -32,9 +32,24 @@ export class TodoList extends React.Component {
         newState: ''
     })
   }
+
+  handleRemoveItem =(event)=>{
+
+    const index = event.target.closest("li").index;
+
+    const slice = this.state.todos.slice();
+
+     slice.splice(index, 1)
+
+
+    this.setState({
+      todos: slice,
+    })
+    
+  }
   render() {
     let todos = this.state.todos.map((todo, index) => (
-      <li key={index}>{todo}</li>
+      <li  key={index}>{todo}<button onClick={this.handleRemoveItem}>Remove from List</button></li>
     ));
     return (
       <div>
