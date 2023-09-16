@@ -28,8 +28,8 @@ export class TodoList extends React.Component {
   };
   handleRefreshState = () =>{
     this.setState({
-        todos:["Do React", "Present the project", "Do the human development"],
-        newState: ''
+        todos:[],
+        // newState: ''
     })
   }
   render() {
