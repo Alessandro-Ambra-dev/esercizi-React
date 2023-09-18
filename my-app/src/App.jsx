@@ -15,7 +15,10 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <select name="" id value={this.state.language} onChange={this.handleLanguageChange}>
+        <select
+          value={this.state.language}
+          onChange={this.handleLanguageChange}
+        >
           <option value="en">English</option>
           <option value="it">Italiano</option>
           <option value="dt">Deutch</option>
