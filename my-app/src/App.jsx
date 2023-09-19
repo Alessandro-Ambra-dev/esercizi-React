@@ -1,7 +1,8 @@
 import React from "react";
+import { LoginComponent } from "./LoginComponent";
 
-export class App extends React.Component {
-  render() {
-    return <div></div>;
-  }
+export function App() {
+  return <div>
+    <LoginComponent/>
+  </div>;
 }
