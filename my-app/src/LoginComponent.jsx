@@ -21,7 +21,9 @@ export function LoginComponent() {
     setData(data);
   }
 
-  console.log(data);
+  function renderLogin() {
+    console.log(data);
+  }
   return (
     <form>
       <input
@@ -42,16 +44,18 @@ export function LoginComponent() {
         value={data.remember}
       />
       <button
-        type="submit"
+        type="button"
         name="submit"
         disabled={
-          data.username === "" || data.password === "" ||
+          data.username === "" ||
+          data.password === "" ||
           data.remember === false
             ? true
             : false
         }
+        onClick={renderLogin}
       >
-        Invia
+        Stampa nel terminale
       </button>
       <button onClick={handleResetForm}>Reimposta</button>
     </form>
