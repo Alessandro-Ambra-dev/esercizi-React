@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { ContextDarkMode, ThemeProvider } from "./ThemeContext";
 export function Counter({ intialValue = 0 }) {
   const [counter, setCounter] = useState(intialValue);
 
