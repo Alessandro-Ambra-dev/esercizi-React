@@ -4,16 +4,19 @@ export function Counter({ intialValue = 0 }) {
   const [counter, setCounter] = useState(intialValue);
 
   useEffect(() => {
-    let interval = setInterval(() => {
+    const interval = setInterval(() => {
       setCounter((c) => c + 1);
     }, 1000);
 
-    setTimeout(() => {
+    return () => {
       clearInterval(interval);
-    }, 5000);
-
-    
+    };
   }, []);
+  useEffect(() => {
+    if (counter == 6) {
+      setCounter(intialValue);
+    }
+  }, [counter]);
 
   return (
     <div>
