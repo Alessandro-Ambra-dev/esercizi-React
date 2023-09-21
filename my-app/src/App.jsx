@@ -1,5 +1,8 @@
 import React from "react";
+import { GithubUser } from "./GithubUser";
 
 export function App() {
-  return <div></div>;
+  return <div>
+    <GithubUser username={"Alessandro-Ambra-dev"}/>
+  </div>;
 }
