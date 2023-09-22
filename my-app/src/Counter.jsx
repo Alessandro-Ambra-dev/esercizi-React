@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-export function Counter({ intialValue = 0 }, {onCounterChange=()=>{}}) {
+export function Counter({ intialValue = 0, onCounterChange=()=>{} }) {
   const [counter, setCounter] = useState(intialValue);
 
   useEffect(() => {
-    // onCounterChange(counter);
+    onCounterChange(counter);
   }, [counter, onCounterChange]);
 
   function handleCounterIncrement() {

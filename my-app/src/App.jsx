@@ -6,7 +6,7 @@ export function App() {
     <div>
       <Counter
         onCounterChange={(counter) => {
-          console.log(`The counter is ${counter} `);
+          console.log(`The counter is ${counter}`);
         }}
       />
     </div>
