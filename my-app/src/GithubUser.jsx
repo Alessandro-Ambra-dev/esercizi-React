@@ -1,41 +1,16 @@
-import { useState, useEffect } from "react";
+import { useGithubUser } from "./HookGithubUser";
 
-export function GithubUser({ username }) {
-  const [user, setUser] = useState(null);
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(null);
+export function GithubUser(username) {
 
-  async function fetchGihubUser(username) {
-    setLoading(true);
-
-    try {
-      const response = await fetch(`https://api.github.com/users/${username}`);
-      const json = await response.json();
-      console.log(json);
-      setUser(json);
-    } catch (error) {
-      setError(error);
-      setUser(null);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  useEffect(() => {
-    fetchGihubUser(username);
-  }, [username]);
+  const {data} = useGithubUser(username)
 
   return (
     <div>
-      {loading && <p>Loading...</p>}
-      {error && <p>There was an error</p>}
-      {user && (
-        <div>
-          <h3>Username: {user.name}</h3>
-          <p>id: {user.id}</p>
-          <i><b>Bio:</b>{user.bio}</i>
-        </div>
-      )}
+      <div>
+        {data && <h3>User: {data.login}</h3>}
+        {data && <p>Id: {data.id}</p>}
+        {data && <i>Bio: {data.bio}</i>}
+      </div>
     </div>
   );
 }

@@ -1,1 +1,1 @@
-Create a GithubUser component that fetches the data of the username passed as a prop, and renders some of the data within a div tag. The API to query is https://api.github.com/users/${username}.
+Extract the logic to fetch a Github user's data from the GithubUser component into a custom hook called useGithubUser.
