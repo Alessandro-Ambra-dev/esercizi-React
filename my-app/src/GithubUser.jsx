@@ -1,17 +1,25 @@
 import { useGithubUser } from "./HookGithubUser";
 
-export function GithubUser(username) {
+export function GithubUser({username}) {
   const { data, error, loading, log } = useGithubUser(username);
 
+  function handleGetUserData(){
+    log(username)
+  }
   return (
     <div>
-      {loading && <p>Loading...</p>}
-      {error && <h2>There was an error!</h2>}
-      <div>
-        {data && <p>User: {data.login}</p>}
-        {/* {fetch && <p>Id: {data.id}</p>} */}
-        {/* {fetch && <i>Bio: {data.bio}</i>} */}
-      </div>
+      <button onClick={handleGetUserData}>Load User data</button>
+      {loading && <h1>Loading...</h1>}
+      {error && <h1>There was an error</h1>}
+      {data && (
+        <div>
+          <h1>Name: {data.login}</h1>
+          <p>Id: {data.id}</p>
+          <i>
+            Bio: <b>{data.bio}</b>
+          </i>
+        </div>
+      )}
     </div>
   );
 }
