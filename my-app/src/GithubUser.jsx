@@ -1,8 +1,8 @@
 import { useGithubUser } from "./HookGithubUser";
 
-export function GithubUser(username) {
+export function GithubUser({username}) {
 
-  const {data} = useGithubUser(username)
+  const {data } = useGithubUser(username)
 
   return (
     <div>
