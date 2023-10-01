@@ -7,7 +7,7 @@ export function GithubUser() {
   const [loading, setLoading] = useState(null);
   const {username} = useParams()
 
-  async function fetchGihubUser(username) {
+  async function fetchGihubUser({username='Alessandro-Ambra-dev'}) {
     setLoading(true);
 
     try {

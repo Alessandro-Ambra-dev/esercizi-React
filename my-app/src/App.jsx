@@ -7,7 +7,7 @@ export function App() {
   return (
     <Routes>
       <Route path="/" element={<ShowGithubUser />} />
-      <Route path="/:username" element={<GithubUser />} />
+      <Route path="/:username" element={<GithubUser username="Alessandro-Ambra-dev" />} />
     </Routes>
   );
 }
