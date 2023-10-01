@@ -18,6 +18,7 @@ export function App() {
           }
         />
         <Route path="/users" element={<ShowGithubUser />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

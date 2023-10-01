@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 export function ShowGithubUser({
   initialState = ["Alessandro", "Vincenzo", "Antonio"],
 }) {
@@ -43,6 +43,9 @@ export function ShowGithubUser({
       <button onClick={handleReset} className="mx-1  text-red-400 bg-black">
         Reset
       </button>
+      <Routes>
+        <Route index element={<p>Add a user and select it</p>} />
+      </Routes>
     </div>
   );
 }
