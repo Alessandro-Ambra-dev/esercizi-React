@@ -24,7 +24,6 @@ export function App() {
       />
       <Route path="/ShowgithubUser" element={<ShowGithubUser />} />
       <Route path="/counter" element={<Counter />} />
-      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
