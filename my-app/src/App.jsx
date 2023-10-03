@@ -1,25 +1,13 @@
 import React from "react";
-import { Link, Route, Routes } from "react-router-dom";
-
-import { NotFound } from "./NotFound";
-import { ShowGithubUser } from "./ShowGithubUser";
+import { Route, Routes } from "react-router-dom";
+import { GithubUser } from "./GithubUser";
 
 export function App() {
   return (
     <div>
+      <h1>Welcome to my app</h1>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              <h1>Welcome to the App:</h1>
-              <Link to={"/users"}>See the Github Users</Link>
-            </div>
-          }
-        />
-        <Route path="/users" element={<ShowGithubUser />} />
-
-        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<GithubUser />} />
       </Routes>
     </div>
   );
