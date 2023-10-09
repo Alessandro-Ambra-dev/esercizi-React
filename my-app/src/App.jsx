@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import { GithubUser } from "./GithubUser";
 import { Counter } from "./Counter";
-import { NotFound } from "./NotFound";
+
 import { ShowGithubUser } from "./ShowGithubUser";
 
 export function App() {
