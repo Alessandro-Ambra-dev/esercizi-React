@@ -13,13 +13,13 @@ export function App() {
         element={
           <div>
             <Link to={"/ShowGithubUser"}>Go to users three</Link>
-            <Link to={"/:username"}>Go directly to the user</Link>
+            <Link to={"/user"}>Go directly to the user</Link>
             <Link to={"/counter"}>Go to counter</Link>
           </div>
         }
       />
       <Route
-        path="/:username"
+        path="/user"
         element={<GithubUser username="Alessandro-Ambra-dev" />}
       />
       <Route path="/ShowgithubUser" element={<ShowGithubUser />} />

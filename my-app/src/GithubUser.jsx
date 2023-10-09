@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+
 
 export function GithubUser() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(null);
-  const {username} = useParams()
 
-  async function fetchGihubUser({username='Alessandro-Ambra-dev'}) {
+  async function fetchGihubUser(username='Alessandro-Ambra-dev') {
     setLoading(true);
 
     try {
@@ -24,8 +23,8 @@ export function GithubUser() {
   }
 
   useEffect(() => {
-    fetchGihubUser(username);
-  }, [username]);
+    fetchGihubUser();
+  }, []);
 
   return (
     <div>
